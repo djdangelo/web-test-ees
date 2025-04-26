@@ -11,7 +11,11 @@
                [rowsPerPageOptions]="[5, 10, 20]" selectionMode="single"
                scrollDirection="both" [scrollable]="true" scrollHeight="400px" styleClass="mt-3" responsiveLayout="scroll">
         <ng-template pTemplate="caption">
-          <div class="flex flex-wrap gap-2 align-items-center justify-content-end">
+          <div class="flex flex-wrap gap-2 align-items-center justify-content-between">
+            <span class="p-input-icon-left w-full sm:w-20rem flex-order-1 sm:flex-order-0">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="onGlobalFilter(dt, $event)" placeholder="Buscar por nombre..." class="w-full" />
+                </span>
             <button (click)="navigateToNewClient()" pButton class="p-button-outlined w-full sm:w-auto flex-order-0 sm:flex-order-1" icon="pi pi-plus" label="Agregar nuevo cliente"></button>
           </div>
         </ng-template>
